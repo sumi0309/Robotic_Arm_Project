@@ -1,0 +1,32 @@
+•Potentiometer provides user input in the form of variable resistance
+We feed the voltage provided by variable resistor (voltage which
+represents position control) into ADC channels of Arduino We are
+going to use four ADC channels of UNO from A 1 to A 4 for this
+
+•After the ADC initialization, we will have digital value of
+potentiometers representing the position needed by user We will
+take this value and match it with servo position
+
+•Arduino has six ADC channels We have used four for our Robotic
+Arm The UNO ADC is of 10 bit resolution so the integer values ranging
+from 0 1023 2 10 1024 values)
+
+•This means that it will map input voltages between 0 and 5 volts into
+integer values between 0 and 1023 So for every 5 1024 4 9 mV) per
+unit We later changed mapping values to 0 511 to solve the buzz
+problems during motor movements
+
+•Arduino Uno has a feature which enables us to control the servo
+position by just giving the degree value Say if we want the servo to
+be at 30 we can directly represent the value in the program The
+SERVO header Servo h file takes care of all the duty ratio
+calculations internally
+
+•There are four pots provided to the user And by rotating these four
+pots, we provide variable voltage at the ADC channels of UNO So
+the digital values of Arduino are under control of user
+
+•These digital values are mapped to adjust the servo motor position,
+hence the servo position is in control of user and by rotating these
+Pots user can move the joints of Robotic arm and can pick or grab
+any object
