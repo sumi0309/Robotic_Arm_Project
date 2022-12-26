@@ -1,0 +1,34 @@
+#include < Servo.h > 
+Servo myservo1, myservo2, myservo3, myservo4; 
+int potpin1 = 1, potpin2 = 2, potpin3 = 3, potpin4 = 4; 
+void setup() {
+    Serial.begin(9600);
+    myservo1.attach(11);
+    myservo2.attach(10);
+    myservo3.attach(9);
+    myservo4.attach(5);
+}
+
+void loop() {
+    
+    int val1 = analogRead(postpin1); 
+    int deg1 = map(val1, 0, 511, 0, 180);
+    myservo1.write(deg1);
+    delay(20);
+    
+    int val2 =analogRead (potpin2);
+    int deg2 = map(val2, 0, 511, 0, 170);
+    myservo2.write(deg2);
+    Serial.println(deg2);
+    delay(20); 
+    
+    int val3 = analogRead (potpin3);
+    int deg3 = map(val3, 0, 511, 10, 170);
+    myservo3.write(deg3);
+    delay(20);
+    
+    int val4 = analogRead (potpin4); 
+    int deg4 = map(val4, 0, 1023, 5, 80);
+    myservo4.write(deg4); 
+    delay(20); 
+}
